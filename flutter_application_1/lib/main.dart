@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:sukuna_wallpapers/views/screens/category.dart';
+import 'package:sukuna_wallpapers/views/screens/home.dart';
 
 void main() {
-  // Primeiro codigo em flutter
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(child: Image(image: AssetImage('build/image/sukuna.png'))),
-        backgroundColor: const Color.fromARGB(255, 112, 118, 138),
-        appBar: AppBar(
-          backgroundColor: Colors.blueGrey[900],
-          title: Center(
-            child: Text(
-              'Wallpaper',
-              style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Wallpaper 4k',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: Category(),
+    );
+  }
 }
